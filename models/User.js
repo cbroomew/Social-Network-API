@@ -2,8 +2,8 @@ const { Schema, model } = require('mongoose');
 
 const userSchema = new Schema(
   {
-    handle: { type: String, unique: true, required: true, trim: true },
-    mail: { type: String, unique: true, required: true, match: [/.+@.+\..+/, 'Invalid email'] },
+    user: { type: String, unique: true, required: true, trim: true },
+    email: { type: String, unique: true, required: true, match: [/.+@.+\..+/, 'Invalid email format'] },
     thoughts: [{ type: Schema.Types.ObjectId, ref: 'Thought' }],
     friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   },
